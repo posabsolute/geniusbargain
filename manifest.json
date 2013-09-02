@@ -1,0 +1,24 @@
+{
+  "name": "Warrior Deal",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Find you a better deal while you browse products",
+  "permissions": [
+    "http://*/*","https://*/*"
+  ],
+  "content_scripts": [ {
+    "js": [ 
+      "libs/jquery.min.js",
+      "libs/pubsub.js",
+
+      "src/config.js",
+      "src/app/utils.js",
+      "src/gettitle.js",
+      "src/checkdeal.js",
+      "src/app/layout.js",
+      "src/app/cleanOffers.js",
+      "src/app.js" 
+    ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}

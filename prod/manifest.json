@@ -1,0 +1,20 @@
+{
+  "name": "Warrior Deal",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Find you a better deal while you browse products",
+  "browser_action": {
+    "name": "Warrior Deal",
+    "icons": ["icon.png"],
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "http://*/*","https://*/*"
+  ],
+  "content_scripts": [ {
+    "js": [ 
+      "prod.js"
+    ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}

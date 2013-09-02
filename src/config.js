@@ -1,0 +1,4 @@
+var dealapp = {
+
+	ajax :{}
+};
