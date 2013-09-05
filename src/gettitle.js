@@ -9,7 +9,7 @@ dealapp.getProduct = {
             price = $("#actualPriceValue").text();
         }else if(/walmart.com/.test(url)){
             title = $(".productTitle").text();
-            price = $(".bigPriceText1").text();
+            price = $(".camelPrice").text();
 
         }else if(/ebay.com/.test(url)){
             title = $("#itemTitle").text();
@@ -28,22 +28,46 @@ dealapp.getProduct = {
             price = $(".price-current-label").text();
         }else if(/sears.com/.test(url)){
             title = $(".productName h1").text();
-            price = $("#bigPriceText1").text();
+            price = $(".youPay .pricing").text();
         }else if(/macys.com/.test(url)){
             title = $("h1#productTitle").text();
-            price = $("#bigPriceText1").text();
-        }else if(/lowes.com/.test(url)){
-            title = $(".itemInfo h1").text();
-            price = $("#bigPriceText1").text();
+            price = $("#priceInfo").text();
+        }else if(/zappos.com/.test(url)){
+            title = $("h1.title").text();
+            price = $(".nowPrice").text();
+        }else if(/dx.com/.test(url)){
+            title = $("h1 #headline").text();
+            price = $("#price").text();
+        }else if(/barnesandnoble.com/.test(url)){
+            title = $("h1.milo").text();
+            price = $(".price").text();
+        }else if(/overstock.com/.test(url)){
+            title = $("#prod_mainCenter h1").text();
+            price = $(".Ovalue").text();
+        }else if(/staples.com/.test(url)){
+            title = $(".productDetails h1").text();
+            price = $(".finalPrice").text();
+        }else if(/tigerdirect.com/.test(url)){
+            title = $(".prodName h1").text();
+            price = $(".salePrice").text();
+        }else if(/store.sony.com/.test(url)){
+            title = $("h1.productName").text();
+            price = $(".productDollars").text();
+        }else if(/gamestop.com/.test(url)){
+            title = $("h1").text();
+            price = $(".buy1 h3").text();
+        }else if(/qvc.com/.test(url)){
+            title = $("h1.fn").text();
+            price = $("#parProductDetailPrice").text();
         }
+
 
         if(price){
             var stringPrice =  price.replace(/([^0-9.])+/i, "").replace(/,/g,''),
                 currentPrice = parseFloat(stringPrice);
         }
-        if(title && title.length > 45){
-            var currentTitle = dealapp.utils.subs(title);
-        }
+        var currentTitle = dealapp.utils.subs(title);
+
         return {
             title : currentTitle,
             encodedTitle : encodeURIComponent(currentTitle),
